@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Warna Utama dan Tema */
+:root {
+    --primary-color: #2b6777; /* Biru Tua */
+    --secondary-color: #52ab98; /* Hijau Laut */
+    --accent-color: #f2a154; /* Oranye Terang */
+    --light-bg-color: #e2d2d2; /* Abu Terang */
+    --dark-bg-color: #1d1d1d; /* Hitam */
+    --text-color: #333; /* Abu Gelap */
+    --text-light-color: #f4f4f4; /* Abu Terang */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-bg-color);
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--primary-color);
+    color: var(--text-light-color);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: var(--text-light-color);
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+.sidebar ul li a:hover {
+    background-color: var(--accent-color);
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center; 
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-light-color);
+}
+
+.navbar .logo {
+    width: 50px;
+    object-fit: cover;
+}
+nav {
+    font-size: larger;
+}
+
+h2 {
+    color: var(--text-color);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1;
+    min-width: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    background-color: var(--secondary-color);
+    color: var(--text-light-color);
+}
+
+/* Breakpoints */
+@media (max-width: 576px) {
+    .col {
+        min-width: 100%;
+        background-color: #b2dfb2;
+    }
+}
+
+@media (min-width: 576px) {
+    .col {
+        min-width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .col {
+        min-width: 33.33%;
+    }
+}
+
+@media (min-width: 992px) {
+    .col {
+        min-width: 25%;
+    }
+}
+
+/* Styling Formulir */
+form {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="date"],
+form input[type="radio"],
+form input[type="password"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-light-color);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Styling Tabel */
+.table-container {
+    max-width: 100%;
+    overflow-x: auto;
+    max-height: 450px; /* Membuat isi tabel dapat di-scroll */
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid var(--primary-color);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--text-light-color);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(196, 221, 245);
+}
+
+tr:nth-child(odd) {
+    background-color: #c8efc8;
+}
+
+tr:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-light-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light-color);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .content {
+        padding: 10px;
+    }
+}
